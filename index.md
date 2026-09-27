@@ -4,8 +4,10 @@ A public instrument that prices the same event on two prediction-market venues t
 prices it: after both venues' fees, at the size the quoted depth actually holds, against the carry on
 the capital it would lock. It reports what it *examined*, not just what it found.
 
-- **[The board](board.html)** — the live-ish snapshot (republished every 10 minutes). Pairs are anonymised
-  on the public board; verdicts, prices, vig, depth and reasoning are real.
+- **[The board](board.html)** — the live-ish snapshot (republished every 10 minutes). Pairs are **unnamed**
+  on the public board; verdicts, prices, vig, depth and reasoning are real. Unnamed is not anonymous: both
+  venues' order books are public, so a reader who matches a row's prices against them can work out which
+  market it is. The names are withheld as a courtesy to the work, not as a secret the page can keep.
 - **[Track record](track-record.md)** — two pre-registered experiments, sealed before the first row,
   scored as written, including the refutation.
 - **[Fee cheat sheet](fees.md)** — three venues, three fee models, bound from each venue's own docs.
