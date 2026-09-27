@@ -27,9 +27,10 @@ in 12 states; the locked model exhausts 1,701 states with no error.
 
 From a home connection in Texas, to Kalshi: a fresh HTTPS connection costs 160–220 ms (70–145 ms of it
 TCP + TLS); a reused connection costs **70 ms**, which is the round trip. To Polymarket, a pair fetch that
-pays its handshakes runs about 270–350 ms at the median. One full scan of 34 pairs, with connections kept
-alive, completes in about **1.6 s** of wall time; the instrument runs one every 20 s. The venues' websockets
-are the push path; the poll is the floor.
+pays its handshakes runs about 270–350 ms at the median. One full scan of the 35 certified pairs, with
+connections kept alive, completes in about **1.6 s** of wall time. The scheduler fires every 20 s and the
+observed median gap between scans is about 25 s, which is the cadence every page here means by "one scan".
+The venues' websockets are the push path; the poll is the floor.
 
 ## What the instrument refuses to do
 

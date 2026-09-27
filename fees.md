@@ -9,8 +9,10 @@ event contracts are the whole game: a 1¢ gross gap is routinely worth −1¢ af
   multiplier. The instrument reads `M` live from the `/series` endpoint rather than from the published PDF,
   because the live value is what a trade pays today. Maker fee `M × 0.0175 × …`, with maker `M` defaulting to
   0 on most series; game series are `quadratic_with_maker_fees`.
-- **Consequence:** the ceiling makes a hard **size floor**. Below about six contracts a sub-cent gap cannot
-  be positive after fees, no matter how the books look.
+- **Consequence:** the ceiling makes a **size floor** that depends on the gap. The smallest fee is one cent per
+  order, so at five contracts a gap must exceed 0.2¢ per contract just to cover Kalshi's fee; a 0.2¢ gap needs
+  about six contracts to break even, a 0.7¢ gap clears at five. Below the floor for its gap, a trade is
+  negative after fees however the books look.
 - **Books are bids only.** A YES ask is `1 − best NO bid`. Prices are fixed-point dollars; some series tick
   at 0.1¢.
 - **Rate limits** are earned, never bought (per Kalshi's published rate-limits page, read 2026-09-27): Basic
@@ -23,7 +25,8 @@ event contracts are the whole game: a 1¢ gross gap is routinely worth −1¢ af
 ## Polymarket (polymarket.com, offshore book)
 
 - **Taker fee:** `C × rate × p × (1−p)`, no rounding, `rate` per market from the market's `feeSchedule`
-  (NFL 0; tennis and MLB 0.05 at the time of binding). Maker fee 0.
+  (rates seen at the time of binding: NFL 0; the long-dated politics markets 0.04; tennis and MLB 0.05).
+  Maker fee 0.
 - Books from the CLOB: **asks descending, bids ascending**; never trust wire order. Tick size per market
   (0.1 / 0.01 / 0.005 / 0.0025 / 0.001) and it can change; `min_order_size` 5.
 - Off-chain matching, on-chain settlement (Polygon). After an engine restart there is a two-minute
