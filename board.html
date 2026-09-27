@@ -60,7 +60,7 @@ footer{max-width:1400px;margin:24px auto 0;font-size:12px;color:var(--mut);line-
 kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0 4px;font-size:11px}
 @media (prefers-reduced-motion: no-preference){tr.row td{transition:background .12s}}
 </style>
-</head><body data-generated="1790535089"><header>
+</head><body data-generated="1790535091"><header>
 <h1>Juice Board — Kalshi ↔ Polymarket, priced the way a Kelly gambler prices it</h1>
 <p class="sub">Every row is one event listed on both venues, certified by hand as settling on the same fact. Edge is after both venues' vig, at the size the quoted price actually holds. Nothing here says a fill would happen — these are passive books read every ~26 s; a gap shorter than that is invisible.</p>
 </header>
@@ -648,7 +648,7 @@ kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0
 </div></td></tr></tbody></table></div>
 <footer><p>Verdicts, in the order they are tested: <b>THIN</b> (no two-sided quote at q_min) · <b>NO EDGE</b> (net ≤ 0 after both vigs) · <b>DUST</b> (under $1 of edge at the quoted size) · <b>CARRY-NEGATIVE</b> (positive, but under 4%/yr on the capital it locks) · <b>LIVE EDGE</b>. Break-even P(diverge) assumes a −50¢/contract loss when the venues settle differently; it is the probability a careful person would compare against the residual note before calling anything an arb.</p>
 <p>Fees: Kalshi taker = round-up(M × 0.07 × C × P(1−P)) per the fee schedule effective 2026-07-07 (M read live per series); Polymarket = C × rate × p(1−p) with the rate read live per market. Sizes are what the best level holds on the thinner leg. Pre-registered before the first observation; sealed results and denominators on the track-record page.</p>
-<p class="mono">generated 2026-09-27 13:51:29 · arb-watch never trades · snapshot</p></footer>
+<p class="mono">generated 2026-09-27 13:51:31 · arb-watch never trades · snapshot</p></footer>
 <script>
 const rows=[...document.querySelectorAll('tr.row')];
 function toggle(tr){const d=tr.nextElementSibling;const open=!d.hidden;d.hidden=open;tr.setAttribute('aria-expanded',String(!open));}
