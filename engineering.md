@@ -6,7 +6,8 @@ checked.
 ## The pricing kernel is a proof first
 
 The fee and edge arithmetic is written in **Lean 4** over integer cents, with the venue fee models as
-definitions and the fixtures (including the exact fee table rows above) checked by `decide`. The same
+definitions and the fixtures (including rows of the venues' own fee tables, see the [fee sheet](fees.md))
+checked by `decide`. The same
 source compiles to C. Measured on this laptop: **273–423 ns per verdict** with fixed parameters, **1.39 µs**
 when the seven tunable parameters are read live. The Python reference implementation of the same verdict
 takes about 68 µs.

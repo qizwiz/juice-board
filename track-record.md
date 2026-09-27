@@ -80,7 +80,7 @@ Every settled series in the sample is listed. NFL, the series behind the two in-
 smallest sample and therefore the weakest bound: nothing observed, but the data cannot yet rule out a
 divergence rate below about 4%.
 
-The first live pair to retire settled identically on both venues, 26 minutes apart.
+The first live pair to retire settled identically on both venues, about 25 minutes apart.
 
 ## Method notes
 
