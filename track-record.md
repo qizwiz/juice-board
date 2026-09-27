@@ -7,7 +7,7 @@ exists today. Each digest covers the file as it stands, pre-registration plus it
 
 | experiment | pre-registered | scored | sha256 of the file (prefix) |
 |---|---|---|---|
-| 1 · long-dated pairs (settle 2028–29) | 2026-09-27 | 2026-09-27, at 244 scans | `5599869f2a665e81` |
+| 1 · long-dated pairs (settle 2028 or later; two close in 2045) | 2026-09-27 | 2026-09-27, at 244 scans | `5599869f2a665e81` |
 | 2 · short-dated pairs (settle ≤ 14 days) | 2026-09-27 | 2026-09-27, at 716 scans | `cb5df22999b47ea9` |
 
 Experiment 2's scoring gate (100 scans) fell hours before anyone scored it; the result section says so.
