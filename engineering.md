@@ -17,8 +17,9 @@ kernel and the Python instrument to the cent.
 
 ## Parameters are tunable while it runs
 
-Fee base, multipliers, the carry hurdle, the dust threshold and the divergence-loss assumption live in a
-64-byte memory-mapped block guarded by a **seqlock**. The writer takes a file lock; readers retry on a torn
+The seven parameters (Kalshi fee base, Kalshi fee multiplier, Polymarket fee rate, the Kelly fraction, the
+dust threshold, the carry hurdle and the divergence-loss assumption) live in a 64-byte memory-mapped block
+guarded by a **seqlock**. The writer takes a file lock; readers retry on a torn
 sequence. The lock was checked in **TLA+**: the unlocked two-writer model produces a torn-read counter-example
 in 12 states; the locked model exhausts 1,701 states with no error.
 

@@ -13,10 +13,12 @@ the capital it would lock. It reports what it *examined*, not just what it found
 
 ## The one-line result so far
 
-**No live edge.** Over 244 scans of 16 long-dated pairs, 25.3% of rows showed a combined price under $1,
-but every one of them was a gap paying between 0.1% and 1.1% a year on capital locked until 2028–29. Over 616 scans
-of 19 short-dated pairs (settling within 14 days), **0 of 10,781 rows** priced under $1. The gaps that
-persist, persist because they are worthless. Details and denominators on the track-record page.
+**No executable edge at scan speed.** Over 244 scans of 16 long-dated pairs, 25.3% of rows showed a combined
+price under $1, but every one of them was a gap paying between 0.1% and 1.1% a year on capital locked until
+2028–29. Over 716 scans of 19 short-dated pairs (settling within 14 days), **2 of 12,481 rows** priced under
+$1: both were one-scan crosses during live games, gone within 25 seconds. The gaps that persist, persist
+because they are worthless; the gaps that would pay do not persist. Details and denominators on the
+track-record page, with both experiments' scored results.
 
 ## Why publish a negative result
 

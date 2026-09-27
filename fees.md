@@ -14,10 +14,11 @@ event contracts are the whole game: a 1¢ gross gap is routinely worth −1¢ af
 - **Books are bids only.** A YES ask is `1 − best NO bid`. Prices are fixed-point dollars; some series tick
   at 0.1¢.
 - **Rate limits** are earned, never bought (per Kalshi's published rate-limits page, read 2026-09-27): Basic
-  200 read / 100 write tokens per second at signup, then Advanced, Expert, Premier, Paragon, Prime and Prestige
-  by trailing-30-day volume share. Ten tokens per order.
+  200 read / 100 write tokens per second at signup; Advanced by a self-serve upgrade call with no volume
+  requirement; Expert, Premier, Paragon, Prime and Prestige by trailing-30-day volume share, with separate
+  earn and keep thresholds. Ten tokens per order.
 - Public REST (books, markets, series) answers without a key; the websocket needs a free API key even for
-  public channels. Settled markets' books answer 404.
+  public channels. A closed market's book answers 404.
 
 ## Polymarket (polymarket.com, offshore book)
 

@@ -1,13 +1,16 @@
 # Track record
 
-Both experiments were **pre-registered**: hypotheses, gates and the scoring rule were written and sealed
-before the first observation. The pre-registration files are private for now (they name the pairs); their
-SHA-256 digests are published here so the text can be verified later against what was sealed today.
+Both experiments were **pre-registered**: hypotheses, gates and the scoring rule were written before the
+first observation, and both have now been **scored** against those gates. The files are private for now
+(they name the pairs); their SHA-256 digests are published so the text can be checked later against what
+exists today. Each digest covers the file as it stands, pre-registration plus its scored result section.
 
-| experiment | sealed | pre-registration sha256 (prefix) |
-|---|---|---|
-| 1 · long-dated pairs (settle 2028–29) | 2026-09-27 | `5599869f2a665e81` |
-| 2 · short-dated pairs (settle ≤ 14 days) | 2026-09-27 | `e4ae1339c609d0e5` |
+| experiment | pre-registered | scored | sha256 of the file (prefix) |
+|---|---|---|---|
+| 1 · long-dated pairs (settle 2028–29) | 2026-09-27 | 2026-09-27, at 244 scans | `5599869f2a665e81` |
+| 2 · short-dated pairs (settle ≤ 14 days) | 2026-09-27 | 2026-09-27, at 716 scans | `cb5df22999b47ea9` |
+
+Experiment 2's scoring gate (100 scans) fell hours before anyone scored it; the result section says so.
 
 ## Experiment 1 — long-dated pairs
 
@@ -40,9 +43,25 @@ limit; carry is. The gaps persist *because* they are worthless.
 
 **Question.** Where carry is negligible (settlement within 14 days), do cross-venue gaps exist at all?
 
-**Status at 616 scans, 19 pairs, 10,781 clean rows:** rows under $1 at minimum size **0 / 10,781**; at
-≥ $5 depth **0 / 10,781**; no sub-$1 window observed. Every short-dated pair has priced 1–4¢ *over* $1
-combined on every scan.
+**Gates, scored as written at 716 scans (19 pairs, 12,481 clean rows, 65 fetch errors):**
+
+| gate | result |
+|---|---|
+| G2 · rows under $1 at minimum size | 2 / 12,481 (0.016%) |
+| G2 · rows under $1 at ≥ $5 depth | 2 / 12,481 |
+| G3 · persistence of sub-$1 windows | 2 windows, median 1 scan, 0/2 lasted ≥ 3 scans |
+| H_adv (gaps collapse within one scan) | **supported** |
+| H_opt (≥ 25% of windows last ≥ 3 scans) | **not met** |
+
+**What the two rows are.** Both are games that were **in play** that afternoon, each under $1 for exactly
+one scan: one at $4.94 all-in for five contracts (1.2¢ per contract, depth up to 210 contracts on that scan),
+one at $4.99 for five (0.2¢ per contract, depth up to 500). Both were gone by the next scan, about 25 seconds
+later. Settlement was hours away, so carry is beaten trivially and means nothing here.
+
+**Interpretation.** Where carry is negligible, cross-venue gaps do appear, as one-scan crosses while a live
+game moves the two books at different speeds, and they close within the scan interval. Whether any of them
+is capturable is a latency question (feed, decision, two orders), not a pricing question, and a 25-second
+scanner cannot see inside one interval. The other 12,479 rows priced 1–4¢ *over* $1 combined.
 
 ## Settlement divergence (the risk the two-leg trade actually carries)
 
