@@ -24,7 +24,8 @@ event contracts are the whole game: a 1¢ gross gap is routinely worth −1¢ af
 
 ## Polymarket (polymarket.com, offshore book)
 
-- **Taker fee:** `C × rate × p × (1−p)`, no rounding, `rate` per market from the market's `feeSchedule`
+- **Taker fee:** `C × rate × p × (1−p)`, with no fee rounding documented (the docs specify rounding for order
+  price and size, not for the fee; the instrument applies none), `rate` per market from the market's `feeSchedule`
   (rates seen at the time of binding: NFL 0; the long-dated politics markets 0.04; tennis and MLB 0.05).
   Maker fee 0.
 - Books from the CLOB: **asks descending, bids ascending**; never trust wire order. Tick size per market
@@ -49,7 +50,7 @@ event contracts are the whole game: a 1¢ gross gap is routinely worth −1¢ af
 | venue | rounding | effect on a 0.3¢ fee |
 |---|---|---|
 | Kalshi | ceiling per order | pays 1¢ |
-| Polymarket (offshore) | none | pays 0.3¢ |
+| Polymarket (offshore) | none documented | pays 0.3¢ |
 | Polymarket US | nearest cent, half-even, per fill | pays 0¢ |
 
 Same formula shape, three different answers on the same trade. Any "arbitrage" number that does not say

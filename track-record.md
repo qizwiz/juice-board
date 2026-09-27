@@ -67,11 +67,18 @@ scanner cannot see inside one interval. The other 12,479 rows priced 1–4¢ *ov
 
 A pair is only an arbitrage if both venues settle on the same fact. Measured on settled history:
 
-| series | divergent settlements |
-|---|---|
-| MLB games | 0 / 807 |
-| ATP tennis | 1 / 453 |
-| WTA tennis | 0 / 540 |
+| series | divergent settlements | 95% upper bound (rule of three) |
+|---|---|---|
+| MLB games | 0 / 807 | 0.4% |
+| WTA tennis | 0 / 540 | 0.6% |
+| ATP tennis | 1 / 453 | — (one observed: 0.2%) |
+| College football | 0 / 330 | 0.9% |
+| WNBA | 0 / 138 | 2.2% |
+| NFL | 0 / 77 | 3.9% |
+
+Every settled series in the sample is listed. NFL, the series behind the two in-play crosses above, has the
+smallest sample and therefore the weakest bound: nothing observed, but the data cannot yet rule out a
+divergence rate below about 4%.
 
 The first live pair to retire settled identically on both venues, 26 minutes apart.
 
