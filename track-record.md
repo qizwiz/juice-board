@@ -129,6 +129,14 @@ None of this is the first measurement of cross-venue prediction-market mispricin
   in-game episodes with a median life of 3.6 s, which is that study's polling floor. Likewise, the "about 25
   seconds" above is this instrument's scan cadence, a resolution floor, not a measured lifetime.
 
+The same review examined four open-source bots on 2026-09-28: speedyhughes/kalshi-poly-arb (the one cross-venue
+bot; assumes Polymarket charges no fee, detects at top-of-book only, publishes no result); profintegra/polymarket-arbitrage
+and MrFadiAi/Polymarket-bot (intra-Polymarket YES+NO; no fee computation; no result, fill count or denominator
+published); and kachence/polymm (intra-Polymarket maker; a stated "after fees" threshold with no fee computation
+in the code; its author-reported profit figures did not survive the review's verification). A fifth repository,
+ImMike/polymarket-arbitrage, self-described as cross-venue, appears only in the review's source list: no finding,
+caveat or verification vote concerns it, so it is unmeasured here and not counted.
+
 What this site adds to that record is narrower than "first": three separately bound fee models across three
 venues, pricing at the executable size, sealed pre-registrations scored as written, and a public denominator.
 

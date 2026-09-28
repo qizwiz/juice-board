@@ -28,7 +28,10 @@ track-record page, with all three experiments' scored results.
 
 On 2026-09-27 I read the marketing and pricing pages of four paid prediction-market "arbitrage alert" products
 (none subscribed to). Those pages advertise *opportunities detected*; they are not the products' results pages,
-so this site makes no claim about whether any of them publishes a track record. What is bound: none of the four
-open-source Kalshi/Polymarket bots examined by an independent review of this site publishes any result, fill
-count or denominator, and each omits or mis-models at least one venue's fee. This page exists to be one
-counterexample: the method is the product. Nothing here is trading advice; nothing here trades.
+so this site makes no claim about whether any of them publishes a track record. What is bound: of the four
+open-source prediction-market arbitrage bots an independent review examined on 2026-09-28 (one cross-venue,
+three intra-Polymarket; named under "Prior work" on the track-record page; a fifth, self-described cross-venue
+repository the review fetched produced no finding either way and is not counted), each omits or mis-models at least one venue's fee, three
+publish no result, fill count or denominator, and the fourth's author-reported profit figures did not survive
+verification. This page exists to be one counterexample: the method is the product. Nothing here is trading
+advice; nothing here trades.
