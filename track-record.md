@@ -82,6 +82,26 @@ divergence rate below about 4%.
 
 The first live pair to retire settled identically on both venues, about 25 minutes apart.
 
+## Prior work (added 2026-09-28 after an independent literature check)
+
+None of this is the first measurement of cross-venue prediction-market mispricing, and the site should say so.
+
+- **Rothschild & Pennock (2014)**, *Algorithmic Finance* 3: real-money Intrade/Betfair pairs in 2012 showed
+  executable net gaps of 1–5% after costs, and a field trial of $3,686 returned 6.38% over three months
+  including transaction costs. There, the **persistent** gap was the profitable one, the opposite of the reading
+  above. Both can hold: different venues, era and access structure (Betfair barred US users).
+- **Gebele & Matthes (2026)**, arXiv 2601.01706: across ten venues and 102,275 events, semantically equivalent
+  markets show persistent execution-aware deviations of 2–4% on average. Flat per-venue fee model, not per-order.
+- **Gebele, Mutzel & Matthes (2026)**, arXiv 2608.00666: intra-Polymarket, prices arbitrage at depth-walked,
+  fee-adjusted executable cost and separates payoff-space from protocol-executable no-arbitrage. A precedent for
+  the executable-size pricing used here.
+- **Cheng, Yang & Zou (2026)**, arXiv 2605.00864: 75 million Polymarket NBA book snapshots, seven executable
+  in-game episodes with a median life of 3.6 s, which is that study's polling floor. Likewise, the "about 25
+  seconds" above is this instrument's scan cadence, a resolution floor, not a measured lifetime.
+
+What this site adds to that record is narrower than "first": three separately bound fee models across three
+venues, pricing at the executable size, sealed pre-registrations scored as written, and a public denominator.
+
 ## Method notes
 
 - Fees per venue from each venue's own schedule (see the [fee sheet](fees.md)); depth walked level by

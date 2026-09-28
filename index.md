@@ -25,8 +25,9 @@ track-record page, with both experiments' scored results.
 
 ## Why publish a negative result
 
-In a survey of paid prediction-market "arbitrage alert" products made on 2026-09-27 (four products, marketing
-pages read, none subscribed to), each stopped at *opportunities detected*; I found none that published
-fill-level, fee-inclusive results with a denominator. That is a bounded observation, not a claim about every
-product that exists. This page exists to be one counterexample: the method is the product. Nothing here is
-trading advice; nothing here trades.
+On 2026-09-27 I read the marketing and pricing pages of four paid prediction-market "arbitrage alert" products
+(none subscribed to). Those pages advertise *opportunities detected*; they are not the products' results pages,
+so this site makes no claim about whether any of them publishes a track record. What is bound: none of the four
+open-source Kalshi/Polymarket bots examined by an independent review of this site publishes any result, fill
+count or denominator, and each omits or mis-models at least one venue's fee. This page exists to be one
+counterexample: the method is the product. Nothing here is trading advice; nothing here trades.
