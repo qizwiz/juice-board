@@ -1,7 +1,8 @@
 # Track record
 
-Both experiments were **pre-registered**: hypotheses, gates and the scoring rule were written before the
-first observation, and both have now been **scored** against those gates. The files are private for now
+All three experiments were **pre-registered**: hypotheses, gates and the scoring rule were written down before
+scoring, and all three have now been **scored** against those gates. The first two were sealed before their first
+observation; the third was sealed before its evaluation but after its held-out block had been looked at, and says so. The files are private for now
 (they name the pairs); their SHA-256 digests are published so the text can be checked later against what
 exists today. Each digest covers the file as it stands, pre-registration plus its scored result section.
 
@@ -89,7 +90,8 @@ pass, same conclusion as the first: at hourly granularity the better venue's mid
 fit to its own history.
 
 **What changes because of it.** A forward ledger is now open: every later evaluation scores only pairs that
-settled *after* this run, with the weights frozen, so the next number nobody has seen in advance.
+settled *after the last settlement in the examined block* (2026-09-27), with the weights frozen, so the next
+number is one nobody has seen in advance.
 
 ## Settlement divergence (the risk the two-leg trade actually carries)
 

@@ -8,8 +8,9 @@ the capital it would lock. It reports what it *examined*, not just what it found
   on the public board; verdicts, prices, vig, depth and reasoning are real. Unnamed is not anonymous: both
   venues' order books are public, so a reader who matches a row's prices against them can work out which
   market it is. The names are withheld as a courtesy to the work, not as a secret the page can keep.
-- **[Track record](track-record.md)** — three pre-registered experiments, sealed before the first row,
-  scored as written, including the refutations.
+- **[Track record](track-record.md)** — three pre-registered experiments, scored as written, including the
+  refutations. The first two were sealed before their first observation; the third says plainly that its
+  held-out block had been looked at before the document existed.
 - **[Fee cheat sheet](fees.md)** — three venues, three fee models, bound from each venue's own docs.
 - **[Engineering](engineering.md)** — the verified kernel, live-tunable parameters, and what latency costs.
 
@@ -21,7 +22,7 @@ price under $1, but 967 of those 976 rows were four pairs sitting permanently un
 a 4% hurdle. Over 716 scans of 19 short-dated pairs (settling within 14 days), **2 of 12,481 rows** priced under
 $1: both were one-scan crosses during live games, gone within 25 seconds. The gaps that persist, persist
 because they are worthless; the gaps that would pay do not persist. Details and denominators on the
-track-record page, with both experiments' scored results.
+track-record page, with all three experiments' scored results.
 
 ## Why publish a negative result
 
