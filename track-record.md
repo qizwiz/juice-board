@@ -9,7 +9,7 @@ exists today. Each digest covers the file as it stands, pre-registration plus it
 |---|---|---|---|
 | 1 · long-dated pairs (settle 2028 or later; two close in 2045) | 2026-09-27 | 2026-09-27, at 244 scans | `5599869f2a665e81` |
 | 2 · short-dated pairs (settle ≤ 14 days) | 2026-09-27 | 2026-09-27, at 716 scans | `cb5df22999b47ea9` |
-| 3 · forecaster: per-series recalibration of a venue mid | 2026-09-28 | 2026-09-28, one evaluation | `5ccbbaeeadc39e5b` |
+| 3 · forecaster: per-series recalibration of a venue mid | 2026-09-28 | 2026-09-28, one evaluation | `83b6efd9885c2a9b` |
 
 Experiment 2's scoring gate (100 scans) fell hours before anyone scored it; the result section says so.
 Experiment 3's pre-registration discloses that its idea came from looking at the held-out block's reliability
@@ -70,20 +70,23 @@ scanner cannot see inside one interval. The other 12,479 rows priced 1–4¢ *ov
 
 **Question.** The first forecaster pass (2026-09-27) found nothing trained on the two venues' prices beat the
 better venue's mid on held-out log-loss (best venue 0.5162, logistic blend 0.5170, trees 0.5654). The cheapest
-remaining candidate: is the mid *miscalibrated* in a way that is stable within a series, so that two monotone
-parameters per series, fit on the training block, beat the raw mid?
+remaining candidate: is the mid *miscalibrated* in a way that is stable within a series, so that a monotone
+recalibration per series (a two-parameter Platt map or a 40-bin isotonic step), fit on the training block,
+beats the raw mid?
 
 **Grounded on training data only** before the run: a global recalibration made the validation block worse; one
-series flipped the sign of its bias between blocks; only the two tennis series carried the same bias in both
-blocks. So the pre-registration narrowed the claim to tennis, kept the raw mid as a candidate in the selection,
+series flipped the sign of its bias between blocks; only the two tennis series both carried the same bias in
+both blocks *and* improved on transfer from one block to the other. So the pre-registration narrowed the claim to tennis, kept the raw mid as a candidate in the selection,
 required at least 40 pairs in both blocks, and fixed the gate and six predictions with credences.
 
 **Result, one evaluation on 42,316 held-out rows / 696 pairs:** the recalibrated mid is **significantly worse**
 than the raw mid, +0.0010 log-loss, 95% CI [+0.0001, +0.0020] by cluster bootstrap over pairs. The series that
 carried the hypothesis gained 0.025 on the 48-pair validation block and then **lost 0.024 on the 54-pair test
 block**. Four of six predictions held (the selection outcome, the gate failing, the secondary candidates losing);
-the two that claimed a per-series gain were refuted. Third pass, same conclusion: at hourly granularity the
-better venue's mid is not improved by anything fit to its own history.
+the two refuted were the per-series log-loss gain and the calibration check: on tennis rows the recalibrated
+mid's reliability curve is *worse* than the raw mid's (largest bin gap 0.197 against 0.174). Second forecaster
+pass, same conclusion as the first: at hourly granularity the better venue's mid is not improved by anything
+fit to its own history.
 
 **What changes because of it.** A forward ledger is now open: every later evaluation scores only pairs that
 settled *after* this run, with the weights frozen, so the next number nobody has seen in advance.
