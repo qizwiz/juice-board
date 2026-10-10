@@ -60,7 +60,7 @@ footer{max-width:1400px;margin:24px auto 0;font-size:12px;color:var(--mut);line-
 kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0 4px;font-size:11px}
 @media (prefers-reduced-motion: no-preference){tr.row td{transition:background .12s}}
 </style>
-</head><body data-generated="1791601920"><header>
+</head><body data-generated="1791602725"><header>
 <h1>Juice Board — Kalshi ↔ Polymarket, priced the way a Kelly gambler prices it</h1>
 <p class="sub">Every row is one event listed on both venues, certified by hand as settling on the same fact. Edge is after both venues' vig, at the size the quoted price actually holds. Nothing here says a fill would happen — these are passive books read every ~26 s; a gap shorter than that is invisible.</p>
 </header>
@@ -74,10 +74,10 @@ kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0
 <div><div class="k">Last scan</div><div class="v"><span id="age">—</span><small> ago</small></div></div>
 </section>
 <section class="strip" aria-label="paper fill record (simulated)">
-<div><div class="k">Paper fill record · simulated</div><div class="v">197,157<small> rows replayed · 16 pairs · 2026-10-09 22:11</small></div>
+<div><div class="k">Paper fill record · simulated</div><div class="v">197,152<small> rows replayed · 16 pairs · 2026-10-09 22:25</small></div>
 <div class="res">A decision is any recorded observation where the best level on each book, for at least the minimum size, sums to under $1 after both venues' fees, sized to the thinner level and capped at 500 contracts. It fills only against the first book recorded ≥ 20 s later, at or under its limit, up to the size still showing (none at all if no book was recorded within three scan gaps); the Polymarket leg is taken first and the Kalshi leg sized to it; fills consume depth, and a price level never yields more than the most it was ever seen to hold; an unhedged Polymarket leg is closed at its next bid. Counts accrue over every row recorded since 2026-09-27, so they exceed the sealed experiments' snapshots. The Polymarket leg here is polymarket.com, which refuses trading from the United States (see the fee sheet); the US-tradable venue, Polymarket US, is a separate exchange not yet in this record. Replayed against recorded books; nothing was sent.</div></div>
 <div><div class="k">Short-dated (settle ≤ 14 d)</div><div class="v">—<small> no rows</small></div></div>
-<div><div class="k">Long-dated (2028 and later)</div><div class="v">93%<small> filled ≥ 20 s later (i.e. by the next recorded book; the median gap between books is ~26 s) · 100% against the book it saw</small></div><div class="res">1031 decisions on 10 of 16 pairs · 331,835 of 356,545 contracts · legged 617 · net $3,357.68 · ≈ $328,478 locked to settlement (1.02% in total, not per year)</div></div>
+<div><div class="k">Long-dated (2028 and later)</div><div class="v">93%<small> filled ≥ 20 s later (i.e. by the next recorded book; the median gap between books is ~26 s) · 100% against the book it saw</small></div><div class="res">1028 decisions on 10 of 16 pairs · 331,050 of 355,760 contracts · legged 617 · net $3,338.40 · ≈ $327,712 locked to settlement (1.02% in total, not per year)</div></div>
 </section>
 <div class="controls">
 <label>Experiment <select id="f-exp"><option value="all">all</option><option value="short">short-dated (≤14 d)</option><option value="long">long-dated (2028 and later)</option></select></label>
@@ -193,13 +193,13 @@ kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0
 <div><h4>Settlement residual (why the two legs might not cancel)</h4><p class="res">certification note withheld on the public board</p><p class="res">rule-text hash withheld</p></div>
 <div><h4>Reasoning, from the numbers</h4><p class="reason">Buy NO on Kalshi at 0.992 and YES on Polymarket at 0.006: gross 0.9980 per $1 payout, a +0.20¢ gap before vig. Kalshi vig 0.06¢ (0.07·M·P(1−P), rounded up to the cent, so a size floor around q≥18), Polymarket vig 0.02¢ (rate 0.04). Net +0.12¢/contract. Priced at the executable size, 500 contracts (the most that stays under $1 walking both books): $0.61 of edge is on the screen. Capital is locked (settles in more than a month) → about +0%/yr.</p></div>
 </div></td></tr>
-<tr class="row" tabindex="0" aria-expanded="false" data-rank="7" data-verdict="DUST" data-pair="pair-07" data-title="Pair 07 ↔ long-dated · settles in more than a month" data-exp="long" data-net="0.0039" data-gross="1.4000" data-kvig="0.8750" data-pvig="0.5211" data-depth="943" data-edge="0.0003" data-days="" data-ann="0.0000" data-pstar="0.00008" data-persist="58.17">
+<tr class="row" tabindex="0" aria-expanded="false" data-rank="7" data-verdict="DUST" data-pair="pair-07" data-title="Pair 07 ↔ long-dated · settles in more than a month" data-exp="long" data-net="0.0039" data-gross="1.4000" data-kvig="0.8750" data-pvig="0.5211" data-depth="741" data-edge="0.0003" data-days="" data-ann="0.0000" data-pstar="0.00008" data-persist="58.17">
 <td class="l">7</td><td class="l"><span class="chip dust">DUST</span></td>
 <td class="l pair"><div><b>Pair 07</b></div><div style="color:var(--mut);font-size:12px">long-dated · settles in more than a month · YES = — · long</div><div class="hover" role="tooltip"><b>inferred reasoning · DUST · under $1 of edge at the quoted size</b>Buy YES on Kalshi at 0.140 and NO on Polymarket at 0.846: gross 0.9860 per $1 payout, a +1.40¢ gap before vig. Kalshi vig 0.88¢ (0.07·M·P(1−P), rounded up to the cent, so a size floor around q≥5), Polymarket vig 0.52¢ (rate 0.04). Net +0.00¢/contract. Priced at the executable size, 8 contracts (the most that stays under $1 walking both books): $0.00 of edge is on the screen. Capital is locked (settles in more than a month) → about +0%/yr.</div></td>
 <td class="pos" title="net edge per contract after both venues' vig; hover the pair name for the full reasoning"><b>+0.00</b></td>
 <td>+1.40</td>
 <td>0.88</td><td>0.52</td>
-<td title="contracts the quoted price holds on the thinner leg; darker = more"><span class="depth deep" style="background:rgb(102,135,188)">943</span></td>
+<td title="contracts the quoted price holds on the thinner leg; darker = more"><span class="depth deep" style="background:rgb(106,139,190)">741</span></td>
 <td class="pos">$0.00</td>
 <td>—</td><td class="">+0.00</td>
 <td title="if the two venues settle differently more often than this, the position loses (−50¢/contract assumed)">0.0%</td>
@@ -295,13 +295,13 @@ kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0
 <div><h4>Settlement residual (why the two legs might not cancel)</h4><p class="res">certification note withheld on the public board</p><p class="res">rule-text hash withheld</p></div>
 <div><h4>Reasoning, from the numbers</h4><p class="reason">Buy YES on Kalshi at 0.020 and NO on Polymarket at 0.983: gross 1.0030 per $1 payout, a -0.30¢ gap before vig. Kalshi vig 0.20¢ (0.07·M·P(1−P), rounded up to the cent, so a size floor around q≥5), Polymarket vig 0.07¢ (rate 0.04). Net -0.57¢/contract. Capital is locked (settles in more than a month) → about +0%/yr.</p></div>
 </div></td></tr>
-<tr class="row" tabindex="0" aria-expanded="false" data-rank="13" data-verdict="NO EDGE" data-pair="pair-13" data-title="Pair 13 ↔ long-dated · settles in more than a month" data-exp="long" data-net="-0.6128" data-gross="0.9000" data-kvig="1.0000" data-pvig="0.5128" data-depth="6255" data-edge="-0.0306" data-days="" data-ann="0.0000" data-pstar="" data-persist="0.00">
+<tr class="row" tabindex="0" aria-expanded="false" data-rank="13" data-verdict="NO EDGE" data-pair="pair-13" data-title="Pair 13 ↔ long-dated · settles in more than a month" data-exp="long" data-net="-0.6128" data-gross="0.9000" data-kvig="1.0000" data-pvig="0.5128" data-depth="6251" data-edge="-0.0306" data-days="" data-ann="0.0000" data-pstar="" data-persist="0.00">
 <td class="l">13</td><td class="l"><span class="chip no">NO EDGE</span></td>
 <td class="l pair"><div><b>Pair 13</b></div><div style="color:var(--mut);font-size:12px">long-dated · settles in more than a month · YES = — · long</div><div class="hover" role="tooltip"><b>inferred reasoning · NO EDGE · the vig eats the gap</b>Buy NO on Kalshi at 0.840 and YES on Polymarket at 0.151: gross 0.9910 per $1 payout, a +0.90¢ gap before vig. Kalshi vig 1.00¢ (0.07·M·P(1−P), rounded up to the cent, so a size floor around q≥5), Polymarket vig 0.51¢ (rate 0.04). Net -0.61¢/contract. Capital is locked (settles in more than a month) → about +0%/yr.</div></td>
 <td class="neg" title="net edge per contract after both venues' vig; hover the pair name for the full reasoning"><b>-0.61</b></td>
 <td>+0.90</td>
 <td>1.00</td><td>0.51</td>
-<td title="contracts the quoted price holds on the thinner leg; darker = more"><span class="depth deep" style="background:rgb(69,109,173)">6,255</span></td>
+<td title="contracts the quoted price holds on the thinner leg; darker = more"><span class="depth deep" style="background:rgb(69,109,173)">6,251</span></td>
 <td class="neg">$-0.03</td>
 <td>—</td><td class="">+0.00</td>
 <td title="if the two venues settle differently more often than this, the position loses (−50¢/contract assumed)">—</td>
@@ -365,7 +365,7 @@ kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0
 </div></td></tr></tbody></table></div>
 <footer><p>Verdicts, in the order they are tested: <b>THIN</b> (no two-sided quote at q_min) · <b>NO EDGE</b> (net ≤ 0 after both vigs) · <b>DUST</b> (under $1 of edge at the quoted size) · <b>CARRY-NEGATIVE</b> (positive, but under 4%/yr on the capital it locks) · <b>LIVE EDGE</b>. Break-even P(diverge) assumes a −50¢/contract loss when the venues settle differently; it is the probability a careful person would compare against the residual note before calling anything an arb.</p>
 <p>Fees: Kalshi taker = round-up(M × 0.07 × C × P(1−P)) per the fee schedule effective 2026-07-07 (M read live per series); Polymarket = C × rate × p(1−p) with the rate read live per market. Sizes are what the best level holds on the thinner leg. Pre-registered before the first observation; sealed results and denominators on the track-record page.</p>
-<p class="mono">generated 2026-10-09 22:11:59 · arb-watch never trades · snapshot</p></footer>
+<p class="mono">generated 2026-10-09 22:25:24 · arb-watch never trades · snapshot</p></footer>
 <script>
 const rows=[...document.querySelectorAll('tr.row')];
 function toggle(tr){const d=tr.nextElementSibling;const open=!d.hidden;d.hidden=open;tr.setAttribute('aria-expanded',String(!open));}
