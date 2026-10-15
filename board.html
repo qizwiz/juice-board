@@ -60,7 +60,7 @@ footer{max-width:1400px;margin:24px auto 0;font-size:12px;color:var(--mut);line-
 kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0 4px;font-size:11px}
 @media (prefers-reduced-motion: no-preference){tr.row td{transition:background .12s}}
 </style>
-</head><body data-generated="1792077947"><header>
+</head><body data-generated="1792078559"><header>
 <h1>Juice Board — Kalshi ↔ Polymarket, priced the way a Kelly gambler prices it</h1>
 <p class="sub">Every row is one event listed on both venues, certified by hand as settling on the same fact. Edge is after both venues' vig, at the size the quoted price actually holds. Nothing here says a fill would happen — these are passive books read every ~28 s; a gap shorter than that is invisible.</p>
 </header>
@@ -74,7 +74,7 @@ kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0
 <div><div class="k">Last scan</div><div class="v"><span id="age">—</span><small> ago</small></div></div>
 </section>
 <section class="strip" aria-label="paper fill record (simulated)">
-<div><div class="k">Paper fill record · simulated</div><div class="v">199,929<small> rows replayed · 16 pairs · 2026-10-15 10:25</small></div>
+<div><div class="k">Paper fill record · simulated</div><div class="v">199,929<small> rows replayed · 16 pairs · 2026-10-15 10:35</small></div>
 <div class="res">A decision is any recorded observation where the best level on each book, for at least the minimum size, sums to under $1 after both venues' fees, sized to the thinner level and capped at 500 contracts. It fills only against the first book recorded ≥ 20 s later, at or under its limit, up to the size still showing (none at all if no book was recorded within three scan gaps); the Polymarket leg is taken first and the Kalshi leg sized to it; fills consume depth, and a price level never yields more than the most it was ever seen to hold; an unhedged Polymarket leg is closed at its next bid. Counts accrue over every row recorded since 2026-09-27, so they exceed the sealed experiments' snapshots. The Polymarket leg here is polymarket.com, which refuses trading from the United States (see the fee sheet); the US-tradable venue, Polymarket US, is a separate exchange not yet in this record. Replayed against recorded books; nothing was sent.</div></div>
 <div><div class="k">Short-dated (settle ≤ 14 d)</div><div class="v">—<small> no rows</small></div></div>
 <div><div class="k">Long-dated (2028 and later)</div><div class="v">90%<small> filled ≥ 20 s later (i.e. by the next recorded book; the median gap between books is ~28 s) · 100% against the book it saw</small></div><div class="res">1352 decisions on 11 of 16 pairs · 466,570 of 518,275 contracts · legged 865 · net $3,183.33 · ≈ $463,386 locked to settlement (0.69% in total, not per year)</div></div>
@@ -365,7 +365,7 @@ kbd{font-family:"IBM Plex Mono",monospace;border:1px solid var(--line);padding:0
 </div></td></tr></tbody></table></div>
 <footer><p>Verdicts, in the order they are tested: <b>THIN</b> (no two-sided quote at q_min) · <b>NO EDGE</b> (net ≤ 0 after both vigs) · <b>DUST</b> (under $1 of edge at the quoted size) · <b>CARRY-NEGATIVE</b> (positive, but under 4%/yr on the capital it locks) · <b>LIVE EDGE</b>. Break-even P(diverge) assumes a −50¢/contract loss when the venues settle differently; it is the probability a careful person would compare against the residual note before calling anything an arb.</p>
 <p>Fees: Kalshi taker = round-up(M × 0.07 × C × P(1−P)) per the fee schedule effective 2026-07-07 (M read live per series); Polymarket = C × rate × p(1−p) with the rate read live per market. Sizes are what the best level holds on the thinner leg. Pre-registered before the first observation; sealed results and denominators on the track-record page.</p>
-<p class="mono">generated 2026-10-15 10:25:47 · arb-watch never trades · snapshot</p></footer>
+<p class="mono">generated 2026-10-15 10:35:58 · arb-watch never trades · snapshot</p></footer>
 <script>
 const rows=[...document.querySelectorAll('tr.row')];
 function toggle(tr){const d=tr.nextElementSibling;const open=!d.hidden;d.hidden=open;tr.setAttribute('aria-expanded',String(!open));}
