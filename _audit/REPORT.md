@@ -15,7 +15,8 @@ There are none I can fix in this repository. The only executable code here is th
 filter and clock JavaScript in `board.html`. I read it and found no defect that changes a displayed
 number. Every WRONG item below comes either from the generator that writes `board.html`, which is not
 in the repo, or from prose. Following "failing test first", the tests in `BoardAgainstItsOwnLabels`
-**fail today** and are written as the spec for that generator. I did not edit `board.html` or any
+**fail today** and are written as the spec for that generator. (W7's test sits in `SiteArithmetic` and
+passes: it asserts the correct arithmetic, which the fees.md sentence contradicts.) I did not edit `board.html` or any
 other published page: those are publications, and `board.html` is overwritten about every 14 minutes.
 
 ## WRONG
@@ -26,7 +27,7 @@ other published page: those are publications, and `board.html` is overwritten ab
 | W2 | board, paper fill record | "Counts accrue over every row recorded since 2026-09-27" | Across the 49 consecutive snapshot pairs, decisions fell 27 times (1,483 → 1,360 overall), rows replayed fell 22 times, contracts attempted fell 19 times, and net $ fell 20 times ($3,486.25 → $3,310.99). Separately, 12,496 scans × the page's own ~29 s is 4.2 days of data, not the 20.3 days since 2026-09-27. Counts that accrue cannot fall. `test_counts_accrue`, `test_record_covers_its_since_date` | The correct total cannot be recovered from the repo. Proposed: "Counts cover the rows currently held for the 16 pairs on the board (about the last 12,500 scans), so they can fall as old rows leave." |
 | W3 | board, short-dated fill line vs track record | "Short-dated (settle ≤ 14 d) — no rows", under "every row since 2026-09-27" | Experiment 2 recorded 12,481 short-dated rows on 2026-09-27. | The same fix as W2: the record covers current pairs only, and should say so. |
 | W4 | board, header strip | "Scans 12496 · 199929 rows" presented as a running count | The count is identical in all 50 snapshots over 11.4 h (about 1,400 new scans expected at ~29 s). Over the same fixed 199,929 rows, the total sub-$1 count (summed over pairs) moved from 68,705 to 67,778, and a fixed set of rows cannot change its sub-$1 count. So these are fixed-size window figures, not totals. Whether that comes from a rolling window, a capped store, or something else is UNVERIFIABLE. `test_scan_counter_advances`, `test_fixed_rows_keep_their_sub_dollar_count` | "Last 12,496 scans · 199,929 rows" (with the same caveat on each row's `Sub-$1 / rows`) |
-| W5 | index.md | "republished every 10 minutes" | The median gap between the 49 commits is 13.9 min (min 13.2, max 15.3). `test_republished_every_ten_minutes` | "republished about every 15 minutes" |
+| W5 | index.md | "republished every 10 minutes" | The median of the 49 gaps between the 50 commits is 13.9 min (min 13.2, max 15.3). `test_republished_every_ten_minutes` | "republished about every 15 minutes" |
 | W6 | board, reasoning on NO EDGE rows 07, 10, 12 | "a size floor around q≥5" | The same rule the board applies to rows 01–06 (smallest q at which the unrounded Kalshi fee reaches 1¢), applied to each row's own price, gives about 143 (pair 07, NO at 0.999), 6 (pair 10, NO at 0.973) and 8 (pair 12, YES at 0.020). These rows appear to fall back to q_min. `test_size_floor_text` | Print the computed floor on every row, or drop the phrase where net ≤ 0. |
 | W7 | fees.md | "a 0.2¢ gap needs about six contracts to break even" | With the 1¢ minimum fee, net is 0.2·q − 1¢: exactly 0 at q = 5 and first positive at q = 6. The sentence before it ("at five contracts a gap must *exceed* 0.2¢") is right. `test_point_two_cent_gap_breaks_even_at_five` | "a 0.2¢ gap breaks even at five contracts and first clears at six" |
 | W8 | engineering.md | "observed median gap between scans is about 25 s, which is the cadence every page here means by 'one scan'" | The board's own "median gap between books" reads 26–29 s across the 50 snapshots, and its header reads "~29 s" today. | "about 25–30 s (the board prints the current median)" |
@@ -87,6 +88,8 @@ other published page: those are publications, and `board.html` is overwritten ab
   engineering.md. It also says "the 11 windows are those four permanent gaps cut by the seven
   fetch-error scans", while the method notes say "Error rows are neutral to persistence windows". Both
   cannot describe the same scoring. The private files would settle it.
+- **Pair labels are ranks.** In every snapshot, "Pair NN" equals the row's rank, reassigned on each
+  publish. So "Pair 04" in two refreshes can be two different markets, and nothing on the board says so.
 - **index.md "gone within 25 seconds".** The track record itself says ~25 s is the scan cadence, a
   resolution floor, not a measured lifetime. Proposed: "gone by the next scan, about 25 s later".
 
@@ -107,6 +110,7 @@ other published page: those are publications, and `board.html` is overwritten ab
 ## What changed
 
 Only `_audit/` was added: `board_audit.py` (parser plus recomputation), `test_board_audit.py` (16
-tests: 6 pass, 10 fail as described above), and this report. No published page, `_config.yml`, Pages
+tests: 9 pass, 7 fail as described above; unittest reports 10 failures because `test_counts_accrue` has
+four subtests), and this report. No published page, `_config.yml`, Pages
 setting or `main` was touched. The work is on branch `claude/number-audit-cp6ol4`: the session's
 designated branch, which carries a harness suffix on the requested name `claude/number-audit`.
